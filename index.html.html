@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>مسیریابی تا موبایل صدف</title>
+<style>
+:root{--bg:#070b1c;--card:#0e1530;--text:#f2f4ff;--muted:#9aa3c7;--line:#6b4bff;--accent:#2fd0ff;--pink:#ff4fd8;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#070b1c}}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(120% 60% at 50% 0%,#1a1550 0%,var(--bg) 60%);color:var(--text);font-family:Vazirmatn,Tahoma,"Segoe UI",sans-serif;min-height:100vh;display:flex;justify-content:center}
+main{width:100%;max-width:440px;padding:32px 20px 40px}
+h1{font-size:26px;margin:0 0 8px;line-height:1.5}
+.sub{color:var(--muted);margin:0 0 24px;font-size:15px}
+.addr{border:1.5px solid var(--line);border-radius:20px;padding:16px 18px;background:var(--card);margin-bottom:22px;line-height:2;box-shadow:0 0 24px rgba(107,75,255,.25)}
+.addr b{color:var(--accent)}
+.btn{display:flex;align-items:center;justify-content:space-between;width:100%;padding:18px 20px;margin-bottom:12px;border-radius:18px;border:1.5px solid transparent;background:linear-gradient(var(--card),var(--card)) padding-box,linear-gradient(90deg,var(--accent),var(--pink)) border-box;color:var(--text);text-decoration:none;font:inherit;font-size:17px;font-weight:600;cursor:pointer}
+.btn:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.btn span{color:var(--muted);font-weight:400;font-size:13px}
+.note{color:var(--muted);font-size:13px;text-align:center;margin-top:18px;min-height:20px}
+</style>
+</head>
+<body>
+<main>
+<h1>مسیر تا موبایل صدف</h1>
+<p class="sub">با هر برنامه‌ای که راحتی، مسیریابی کن.</p>
+<div class="addr"><b>آدرس دقیق</b><br>تهران، تهرانسر، چهارراه صدف،<br>پاساژ صدف، پلاک ۱۷</div>
+
+<a class="btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=35.69316781225501,51.25436827540397" target="_blank" rel="noopener">مسیریابی با گوگل‌مپ <span>باز کردن</span></a>
+<a class="btn" href="https://nshn.ir/8erbvg1ENxJ_9c" target="_blank" rel="noopener">مسیریابی با نشان <span>باز کردن</span></a>
+<a class="btn" href="https://balad.ir/location?latitude=35.69316781225501&longitude=51.25436827540397&zoom=17" target="_blank" rel="noopener">مسیریابی با بلد <span>باز کردن</span></a>
+<a class="btn" href="https://waze.com/ul?ll=35.69316781225501,51.25436827540397&navigate=yes" target="_blank" rel="noopener">مسیریابی با ویز <span>باز کردن</span></a>
+<button class="btn" id="copy" type="button">کپی آدرس <span>برای هر برنامه‌ای</span></button>
+<p class="note" id="note" role="status"></p>
+</main>
+<script>
+document.getElementById('copy').addEventListener('click',function(){
+  var t='تهران، تهرانسر، چهارراه صدف، پاساژ صدف، پلاک ۱۷، موبایل صدف';
+  var n=document.getElementById('note');
+  function ok(){n.textContent='آدرس کپی شد'}
+  function fail(){n.textContent='کپی نشد؛ آدرس را دستی انتخاب کن'}
+  try{navigator.clipboard.writeText(t).then(ok,fail)}catch(e){fail()}
+});
+</script>
+</body>
+</html>
